@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "The Joel Hilton Film Collection";
+}
+<!--Joel homepage with his image-->
+<div class="text-center">
+    <h1 class="display-4 fw-bold mt-4">🎬 The Joel Hilton Film Collection 🎥</h1>
+    <img src="images/JoelHiltonHeadshot.jpg" alt="Joel Hilton" class="rounded shadow-lg img-fluid mt-3" style="max-width: 300px; transition: transform 0.3s ease-in-out;"
+         onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <p class="mt-4 fs-5">The most legendary film collection curated by the man himself, Joel Hilton.</p>
+    <a href="@Url.Action("Get2Know", "Home")" class="btn btn-primary btn-lg mt-3">Get to Know Joel</a>
+</div>

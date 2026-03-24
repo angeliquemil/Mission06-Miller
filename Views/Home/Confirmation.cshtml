@@ -1,0 +1,31 @@
+@model Movie
+
+@{
+    ViewData["Title"] = "Confirmation";
+}
+<!--Confirm that movie was added-->
+<div class="text-center mt-5">
+    <h2 class="text-success">🎉 Movie Successfully Added! 🎬</h2>
+    <p class="lead">Here are the details of the movie you just added:</p>
+
+    <div class="card shadow-lg p-4 mt-4">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Category:</strong> @Model.Category</li>
+            <li class="list-group-item"><strong>Title:</strong> @Model.Title</li>
+            <li class="list-group-item"><strong>Year:</strong> @Model.Year</li>
+            <li class="list-group-item"><strong>Director:</strong> @Model.Director</li>
+            <li class="list-group-item"><strong>Rating:</strong> @Model.Rating</li>
+            <li class="list-group-item"><strong>Edited:</strong> @(Model.Edited ? "Yes" : "No")</li>
+            @if (!string.IsNullOrEmpty(Model.LentTo))
+            {
+                <li class="list-group-item"><strong>Lent To:</strong> @Model.LentTo</li>
+            }
+            @if (!string.IsNullOrEmpty(Model.Notes))
+            {
+                <li class="list-group-item"><strong>Notes:</strong> @Model.Notes</li>
+            }
+        </ul>
+    </div>
+
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary mt-4">🏠 Back to Home</a>
+</div>
